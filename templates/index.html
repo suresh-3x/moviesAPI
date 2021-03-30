@@ -10,7 +10,6 @@
 
 <body>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for genre.." title="Type in a name">
 
 <table id="myTable">
   <tr class="header">
@@ -22,7 +21,8 @@
     <option>Scripted</option>
     <option>Documentary</option>
     </select></th>
-    <th style="width:40%;">Genre</th>
+    <th style="width:40%;">Genre<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for genre.." title="Type in a name">
+</th>
     <th style="width:40%;">Language<select id="mylist2" onchange="myFun2()" class='form-control'>
     <option value="none" selected disabled hidden>
           Select an Option
