@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </head>
+
+
+
+<body>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for genre.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name<p><button onclick="sortTable()">Sort</button></p></th>
+    <th style="width:40%;">Movie Type<select id="mylist" onchange="myFun()" class='form-control'>
+    <option value="none" selected disabled hidden>
+          Select an Option
+      </option>
+    <option>Scripted</option>
+    <option>Documentary</option>
+    </select></th>
+    <th style="width:40%;">Genre</th>
+    <th style="width:40%;">Language<select id="mylist2" onchange="myFun2()" class='form-control'>
+    <option value="none" selected disabled hidden>
+          Select an Option
+      </option>
+    <option>English</option>
+    <option>Chinese</option>
+    <option>Korean</option>
+    <option>Japanese</option>
+    </select></th>
+    <th style="width:40%;">Runtime<p><button onclick="sortTableByRuntime()">Sort</button></p></th>
+  </tr>
+    {% for x in data %}
+    <tr>
+        <td>{{x['name']}}</td>
+        <td>{{x['movie_type']}}</td>
+        <td>{{x['genre']}}</td>
+        <td>{{x['language']}}</td>
+        <td>{{x['runtime']}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+</body>
+</html>
